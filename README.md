@@ -1,4 +1,17 @@
 # Multi-Agent Pacman Capture the Flag
+## Description
+
+A multi-agent AI project built on the [Berkeley Pacman Capture the Flag framework](http://ai.berkeley.edu/contest.html) (Python 3 port by [cshelton](https://github.com/cshelton/pacman-ctf)). Two teams of agents compete to eat as many food pellets as possible from the opposing side while defending their own territory.
+
+![Pacman CTF](capture_the_flag.png)
+ 
+## Agents
+
+Three agents were implemented, each using a different AI strategy:
+1. QapproxTeam.py : Approximate Q-Learning (One offensive and one defensive agent that learn via function approximation Q-learning. Weights are trained over many episodes and saved to PolicyFolder/).
+2. MCTSTeam.py : Monte Carlo Tree Search (Offensive agent uses MCTS when danger ghosts are nearby, falls back to a weighted heuristic otherwise. Defensive agent uses a heuristic policy).
+3. HeuristicAgent.py : Rule-based Heuristic (Offensive and defensive agents guided by hand-crafted feature weights, like food distance, invader count, capsule distance, teammate distance, etc.).
+
 
 ## Folders/Files
 - problem_description.pdf (Objectives)
