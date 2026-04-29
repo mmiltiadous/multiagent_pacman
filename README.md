@@ -1,12 +1,12 @@
 # Multi-Agent Pacman Capture the Flag
 
 ## Files
-- problem_description.pdf     # Description of task
-- agents folder               # Implemented agents
-- agent_eval.py               # Script to evaluate agents over N games
-- PolicyFolder                # Tuned Parameters
-- results/                    # Evaluation results (CSV) are saved here
-- report.pdf                  # Dicumentation of Implementation
+- problem_description.pdf (Description of task)
+- agents folder (Implemented agents)
+- agent_eval.py (Script to evaluate agents over N games)
+- PolicyFolder/ (Tuned Parameters)
+- results/ (Evaluation results (CSV) are saved here)
+- report.pdf (Dicumentation of Implementation)
 
 
 Check [pacman-ctf/](https://github.com/cshelton/pacman-ctf) for cloned files.
