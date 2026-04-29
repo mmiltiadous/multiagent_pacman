@@ -1,9 +1,7 @@
 # Multi-Agent Pacman Capture the Flag
 ## Description
 
-A multi-agent AI project built on the [Berkeley Pacman Capture the Flag framework](http://ai.berkeley.edu/contest.html) (Python 3 port by [cshelton](https://github.com/cshelton/pacman-ctf)). Two teams of agents compete to eat as many food pellets as possible from the opposing side while defending their own territory.
-
-![Pacman CTF](capture_the_flag.png)
+A multi-agent AI project built on the Berkeley Pacman Capture the Flag framework (Python 3 port by [cshelton](https://github.com/cshelton/pacman-ctf)). Two teams of agents compete to eat as many food pellets as possible from the opposing side while defending their own territory.
  
 ## Agents
 
@@ -14,15 +12,27 @@ Three agents were implemented, each using a different AI strategy:
 
 
 ## Folders/Files
-- problem_description.pdf (Objectives)
-- agents/ (Implemented agents)
-- agent_eval.py (Script to evaluate agents over N games)
-- PolicyFolder/ (Tuned Parameters)
-- results/ (Evaluation results)
-- report.pdf (Documentation of Implementation)
+
+- `agents/` : Implemented agent files
+  - `QapproxTeam.py` : Approximate Q-Learning team
+  - `MCTSTeam.py` : MCTS team
+  - `MCTSAgents.py` : MCTS offensive/defensive agent logic
+  - `MCTSNode.py` : MCTS node and search implementation
+  - `HeuristicAgent.py` : Heuristic-based team
+- `PolicyFolder/` : Trained Q-Learning weights and replay buffers (weights required at runtime)
+  - `DefensiveQ.txt`
+  - `OffensiveQ.txt`
+  - `savebufferDefensiveQ.txt`
+  - `savebufferOffensiveQ.txt`
+- `results/` : Evaluation output CSVs (win/draw/lose counts)
+- `agent_eval.py` : Script to evaluate agents over N games
+- `capture.py` : Main game entry point (from pacman-ctf)
+- `report.pdf` : Full project report
+- `problem_description.pdf` : Assignment 
+
+All other files (`game.py`, `captureAgents.py`, `util.py`, etc.) are from the [cshelton/pacman-ctf](https://github.com/cshelton/pacman-ctf) repository.
 
 
-Check [pacman-ctf/](https://github.com/cshelton/pacman-ctf) for cloned files.
 ## Instructions
 
 To use the `agent_eval.py` first put your agent under the `agents` directory. The run the script:
@@ -32,7 +42,7 @@ python3 agent_eval.py -a YOUR_TEAM_NAME -e ENEMY_TEAM_NAME  -n NUM_OF_EVALS
 The result will be saved under the `results` directory.
 The default values:
 
-`-a`: `balineTeam` 
+`-a`: `baselineTeam` 
 
 `-e`: `baselineTeam`
 
@@ -44,12 +54,12 @@ Then just run e.g
 python3 capture.py -r QapproxTeam -b baselineteam
 ```
 
-To train QapproxTeam and obtain the policy, a folder named policyFolder should be in the same folder with it and capture.py. The policyFolder should contain four .txt files with names: 
+### Train QapproxTeam
 
-DefensiveQ, OffensiveQ, savebufferDefensiveQ, savebufferOffensiveQ.
-Uncomment line 28 and comment line 27.
-
-Then just run: 
+1. Place `PolicyFolder/` (containing `DefensiveQ.txt`, `OffensiveQ.txt`, `savebufferDefensiveQ.txt`, `savebufferOffensiveQ.txt`) in the same folder as `capture.py`
+2. In `QapproxTeam.py`, comment line 27 and uncomment line 28 to enable training mode
+3. Run:
+```bash
+python3 capture.py -r QapproxTeam -b baselineTeam -n 1000 -Q
 ```
-python3 capture.py -r QapproxTeam -b baselineteam -n 1000 -Q
-```
+After training, revert lines 27/28 to run the agent normally.
