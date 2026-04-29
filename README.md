@@ -1,8 +1,8 @@
 # Multi-Agent Pacman Capture the Flag
 
-## Files
+## Folders/Files
 - problem_description.pdf (Description of task)
-- agents folder (Implemented agents)
+- agents/ (Implemented agents)
 - agent_eval.py (Script to evaluate agents over N games)
 - PolicyFolder/ (Tuned Parameters)
 - results/ (Evaluation results (CSV) are saved here)
