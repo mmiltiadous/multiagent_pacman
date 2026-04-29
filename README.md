@@ -1,4 +1,16 @@
-# pacman-ctf
+# Multi-Agent Pacman Capture the Flag
+
+## Files
+
+- agents folder               # Implemented agents
+- agent_eval.py               # Script to evaluate agents over N games
+- PolicyFolder                # Tuned Parameters
+- results/                    # Evaluation results (CSV) are saved here
+
+
+Check [pacman-ctf/](https://github.com/cshelton/pacman-ctf) for cloned files
+
+## Instructions
 
 To use the `agent_eval.py` first put your agent under the `agents` directory. The run the script:
 ```
