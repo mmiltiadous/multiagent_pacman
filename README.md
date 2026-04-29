@@ -9,8 +9,7 @@
 - report.pdf                  # Dicumentation of Implementation
 
 
-Check [pacman-ctf/](https://github.com/cshelton/pacman-ctf) for cloned files and requirements
-
+Check [pacman-ctf/](https://github.com/cshelton/pacman-ctf) for cloned files.
 ## Instructions
 
 To use the `agent_eval.py` first put your agent under the `agents` directory. The run the script:
